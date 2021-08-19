@@ -1,0 +1,12 @@
+.search-field__container {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 250px;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: 18px;
+}
