@@ -1,0 +1,9 @@
+.list-items__container {
+  margin-top: 60px;
+}
+
+.list-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
