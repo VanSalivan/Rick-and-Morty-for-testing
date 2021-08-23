@@ -1,14 +1,14 @@
 // Externals
 import { fetchCardsStart, fetchCardsSuccess, fetchCardsFailure } from "../actionCreators"
-import { getAllCharters } from "../services/getData"
+import { searchCharacters } from "../services/getData"
 
-export const fetchCharacters = () => async (dispatch: (arg0: { type: string; payload?: any; err?: boolean }) => void) => {
+export const fetchCharacters = (term:string) => async (dispatch: (arg0: { type: string; payload?: any; err?: boolean }) => void) => {
   dispatch(fetchCardsStart())
 
   try {
-    const cards = await getAllCharters()
+    const cards = await searchCharacters(term)
 
-    setTimeout(() => dispatch(fetchCardsSuccess(cards)), 5000)
+    dispatch(fetchCardsSuccess(cards))
   } catch (err) {
     dispatch(fetchCardsFailure(err))
   }

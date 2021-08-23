@@ -34,7 +34,7 @@
 }
 
 .spinner-body>div:nth-child(2) {
-  border-color: transparent #fbfbfb transparent #fbfbfb;
+  border-color: transparent #000000 transparent #000000;
 }
 
 .spinner-body>div:nth-child(3) {
@@ -88,15 +88,15 @@
   height: 5.1px;
   top: -5.1px;
   left: 40.8px;
-  background: #fbfbfb;
+  background: #000000;
   border-radius: 50%;
-  box-shadow: 0 91.8px 0 0 #fbfbfb;
+  box-shadow: 0 91.8px 0 0 #000000;
 }
 
 .spinner-body>div:nth-child(4) div:after {
   left: -5.1px;
   top: 40.8px;
-  box-shadow: 91.8px 0 0 0 #fbfbfb;
+  box-shadow: 91.8px 0 0 0 #000000;
 }
 
 .spinner-wrap {

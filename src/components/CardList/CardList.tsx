@@ -1,30 +1,29 @@
 // Dependencies
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
 
 // Externals
 import './CardList.css';
-import { RootState } from '../../types/types';
-import { Card } from '../Card/Card';
-import { fetchCharacters } from '../../actions/cardActions';
 import Spinner from '../Spinner';
+import { Card } from '../Card/Card';
+import { ICharacter } from '../../types/character';
 
-const CardList: React.FC = () => {
-  const cards = useSelector((state: RootState) => state.cardReducer.cards);
-  const dispatch = useDispatch();
+type CardListProps = {
+  cards: ICharacter[];
+  loading: boolean;
+};
 
-  useEffect(() => {
-    dispatch(fetchCharacters());
-  }, []);
-
-  if (cards.length === 0) {
-    return <Spinner />
+const CardList = ({ cards, loading }: CardListProps) => {
+  if (loading) {
+    return <Spinner />;
   }
 
   return (
     <div className='list-items__container'>
-        <ul className='list-items'>
-          {cards.map((card) => (
+      <ul className='list-items'>
+        {!cards ? (
+          <div>Ничего не найдено</div>
+        ) : (
+          cards.map((card) => (
             <Card
               key={card.id}
               name={card.name}
@@ -32,8 +31,9 @@ const CardList: React.FC = () => {
               species={card.species}
               image={card.image}
             />
-          ))}
-        </ul>
+          ))
+        )}
+      </ul>
     </div>
   );
 };

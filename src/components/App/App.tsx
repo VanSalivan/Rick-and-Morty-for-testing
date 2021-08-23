@@ -2,15 +2,13 @@
 import React from 'react';
 
 // Externals
-import './App.css';
-import CardList from '../CardList';
-import SearchField from '../SearchField';
+import './App.css'
+import PageContainer from '../../containers/PageContainer';
 
 const App: React.FC = () => {
   return (
     <div className='container'>
-      <SearchField />
-      <CardList />
+      <PageContainer />
     </div>
   );
 };
