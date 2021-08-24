@@ -9,7 +9,7 @@ import { RootState } from '../../types/types';
 import { fetchCharacters } from '../../actions/cardActions';
 
 const PageContainer: React.FC = () => {
-  const { cards, loading } = useSelector((state: RootState) => state.cardReducer);
+  const { cards, loading, err } = useSelector((state: RootState) => state.cardReducer);
   const [term, setTerm] = useState('');
 
   const dispatch = useDispatch();
@@ -19,13 +19,17 @@ const PageContainer: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchCharacters(term));
+    if (term === '') {
+      dispatch(fetchCharacters(term))
+    } else if (term.length >= 2) {
+      setTimeout(dispatch(fetchCharacters(term)), 500)
+    }
   }, [term]);
 
   return (
     <>
       <SearchField onSearchChange={onSearchChange} term={term} />
-      <CardList cards={cards} loading={loading} />
+      <CardList cards={cards} loading={loading} err={err} />
     </>
   );
 };

@@ -5,7 +5,7 @@ import { ICharacter } from '../types/character';
 const initialState = {
   cards: [] as ICharacter[],
   loading: false,
-  err: null
+  err: false
 };
 
 export type initialStateType = typeof initialState
@@ -16,6 +16,7 @@ const cardReducer = (state = initialState, action: any):initialStateType => {
       return {
         ...state,
         loading: true,
+        err: false
       };
     }
 
@@ -29,9 +30,9 @@ const cardReducer = (state = initialState, action: any):initialStateType => {
 
     case FETCH_CARDS_FAILURE: {
       return {
-        ...state,
+        cards:[],
         loading: false,
-        err: action.payload,
+        err: true,
       };
     }
 
