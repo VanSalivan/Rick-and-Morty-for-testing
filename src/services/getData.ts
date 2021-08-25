@@ -9,5 +9,5 @@ export const searchCharacters = async (term: string, pageNumber: number = 1) => 
   }
   const body = await characters.json()
   console.log(body)
-  return body.results
+  return body
 };

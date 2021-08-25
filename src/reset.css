@@ -1,3 +1,7 @@
+:root {
+  --base-color: #00acee
+}
+
 /* Обнуление стилей */
 * {
   padding: 0;

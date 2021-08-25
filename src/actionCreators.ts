@@ -1,5 +1,5 @@
 // Externals
-import { FETCH_CARDS_START, FETCH_CARDS_SUCCESS, FETCH_CARDS_FAILURE } from './actionTypes';
+import { FETCH_CARDS_START, FETCH_CARDS_SUCCESS, FETCH_CARDS_FAILURE, FETCH_PAGES_SUCCESS } from './actionTypes';
 
 // CARDS
 const fetchCardsStart = () => {
@@ -23,4 +23,12 @@ const fetchCardsFailure = (err: any) => {
   };
 };
 
-export { fetchCardsStart, fetchCardsSuccess, fetchCardsFailure };
+
+const fetchPagesSuccess = ( pages: number) => {
+  return {
+    type: FETCH_PAGES_SUCCESS,
+    payload: pages
+  }
+}
+
+export { fetchCardsStart, fetchCardsSuccess, fetchCardsFailure, fetchPagesSuccess };

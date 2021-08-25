@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // Externals
 import SearchField from '../../components/SearchField';
 import CardList from '../../components/CardList';
+import PaginationList from '../../components/PaginationList';
 import { RootState } from '../../types/types';
 import { fetchCharacters } from '../../actions/cardActions';
 
@@ -30,6 +31,7 @@ const PageContainer: React.FC = () => {
     <>
       <SearchField onSearchChange={onSearchChange} term={term} />
       <CardList cards={cards} loading={loading} err={err} />
+      <PaginationList />
     </>
   );
 };
