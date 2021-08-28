@@ -2,7 +2,8 @@
   width: 100%;
   max-width: 200px;
   height: 200px;
-  background-color: red;
+  background-color: rgb(190, 184, 184);
+  background-size: cover;
   margin-bottom: 25px;
   position: relative;
 }

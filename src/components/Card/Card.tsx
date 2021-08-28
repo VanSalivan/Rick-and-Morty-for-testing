@@ -14,7 +14,6 @@ interface ICardProps {
 const Card = ({ name, status, species, image }: ICardProps) => {
   const divStyle = {
     backgroundImage: `url('${image}')`,
-    backgroundSize: 'cover',
   };
 
   return (

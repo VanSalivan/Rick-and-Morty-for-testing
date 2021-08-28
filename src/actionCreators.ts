@@ -1,5 +1,5 @@
 // Externals
-import { FETCH_CARDS_START, FETCH_CARDS_SUCCESS, FETCH_CARDS_FAILURE, FETCH_PAGES_SUCCESS } from './actionTypes';
+import { FETCH_CARDS_START, FETCH_CARDS_SUCCESS, FETCH_CARDS_FAILURE, FETCH_PAGES_SUCCESS, FETCH_CURRENT_PAGE_SUCCESS } from './actionTypes';
 
 // CARDS
 const fetchCardsStart = () => {
@@ -31,4 +31,11 @@ const fetchPagesSuccess = ( pages: number) => {
   }
 }
 
-export { fetchCardsStart, fetchCardsSuccess, fetchCardsFailure, fetchPagesSuccess };
+const fetchCurrentPageSuccess = (currentPage: number) => {
+  return {
+    type: FETCH_CURRENT_PAGE_SUCCESS,
+    payload: currentPage
+  }
+}
+
+export { fetchCardsStart, fetchCardsSuccess, fetchCardsFailure, fetchPagesSuccess, fetchCurrentPageSuccess };

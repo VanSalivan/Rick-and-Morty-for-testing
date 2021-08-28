@@ -1,4 +1,4 @@
-export const searchCharacters = async (term: string, pageNumber: number = 1) => {
+export const searchCharacters = async (term: string, pageNumber: number) => {
 
   const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${term}`;
   const characters = await fetch(url);

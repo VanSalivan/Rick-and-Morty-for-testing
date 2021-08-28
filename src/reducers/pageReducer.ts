@@ -1,9 +1,9 @@
 // Externals
-import { FETCH_PAGES_SUCCESS } from '../actionTypes';
+import { FETCH_PAGES_SUCCESS, FETCH_CURRENT_PAGE_SUCCESS } from '../actionTypes';
 
 const initialState = {
   pages: 0,
-  currentPage: 1,
+  currentPage: 0,
 };
 
 export type initialStateType = typeof initialState;
@@ -15,6 +15,13 @@ const pageReducer = (state = initialState, action: any): initialStateType => {
         ...state,
         pages: action.payload,
       };
+    }
+      
+    case FETCH_CURRENT_PAGE_SUCCESS: {
+      return {
+        ...state,
+        currentPage: action.payload
+      }
     }
 
     default:

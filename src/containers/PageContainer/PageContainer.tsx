@@ -30,8 +30,8 @@ const PageContainer: React.FC = () => {
   return (
     <>
       <SearchField onSearchChange={onSearchChange} term={term} />
+      <PaginationList term={term} />
       <CardList cards={cards} loading={loading} err={err} />
-      <PaginationList />
     </>
   );
 };
